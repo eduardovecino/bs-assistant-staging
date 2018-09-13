@@ -12,10 +12,7 @@ export class ProductIntents {
 
     public intents(app): void {
         app.intent('Default Welcome Intent', conv => {
-            conv.ask(new Permission({
-                context: 'Para dirigirme a usted por su nombre y conocer su ubicación,',
-                permissions: [],
-            }));
+            conv.ask('Hola');
         });
 
         app.intent('Saldo cuenta', (conv, { tipo_cuenta }) => {
