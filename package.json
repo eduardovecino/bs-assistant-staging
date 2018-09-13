@@ -12,7 +12,7 @@
     "request-promise": "^4.2.2"
   },
   "scripts": {
-    "start": "node index-dialogflow.ts"
+    "start": "node dist/index-dialogflow.js"
   },
   "author": "",
   "license": "ISC",
