@@ -12,8 +12,8 @@ export default class AppDialogFlow {
     constructor() {
         console.log('AppDialogFlow constructor');
         this.app = dialogflow({ debug: true });
+        this.expressApp = express();
         this.config();
-
         this.expressApp.post('', this.app);
         this.productIntents.intents(this.app); 
     }

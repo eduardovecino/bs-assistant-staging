@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const express = require("express");
 const bodyParser = require("body-parser");
 const products_1 = require("./dialogflow/intents/products");
 const actions_on_google_1 = require("../node_modules/actions-on-google");
@@ -8,6 +9,7 @@ class AppDialogFlow {
         this.productIntents = new products_1.ProductIntents();
         console.log('AppDialogFlow constructor');
         this.app = actions_on_google_1.dialogflow({ debug: true });
+        this.expressApp = express();
         this.config();
         this.expressApp.post('', this.app);
         this.productIntents.intents(this.app);
