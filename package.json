@@ -1,7 +1,7 @@
 {
   "name": "dialogflow-bs",
   "version": "1.0.0",
-  "main": "index-dialogflow.ts",
+  "main": "dist/index-dialogflow.js",
   "dependencies": {
     "@types/express": "^4.16.0",
     "@types/mocha": "^5.2.5",
