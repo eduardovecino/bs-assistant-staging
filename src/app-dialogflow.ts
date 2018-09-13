@@ -16,12 +16,7 @@ class AppDialogFlow {
         this.config();
         this.expressApp.post('', this.app);
 
-        // this.productIntents.intents(this.app);
-        
-        this.app.intent('Default Welcome Intent', conv => {
-            console.log('INTENT: Default Welcome Intent');
-            conv.ask('Hola');
-        });
+        this.productIntents.intents(this.app);
     }
 
     private config(): void {
