@@ -14,10 +14,12 @@ export class ProductIntents {
         console.log('Registering Products Intents');
 
         app.intent('Default Welcome Intent', conv => {
+            console.log('INTENT: Default Welcome Intent');
             conv.ask('Hola');
         });
 
         app.intent('Saldo cuenta', (conv, { tipo_cuenta }) => {
+            console.log('INTENT: Saldo cuenta');
             const data = this.productsService.getProducts();
             conv.ask('El saldo  de la cuenta es de ' + data.num);
         });

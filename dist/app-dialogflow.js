@@ -12,7 +12,11 @@ class AppDialogFlow {
         this.expressApp = express();
         this.config();
         this.expressApp.post('', this.app);
-        this.productIntents.intents(this.app);
+        // this.productIntents.intents(this.app);
+        this.app.intent('Default Welcome Intent', conv => {
+            console.log('INTENT: Default Welcome Intent');
+            conv.ask('Hola');
+        });
     }
     config() {
         // support application/json type post data
@@ -23,4 +27,7 @@ class AppDialogFlow {
     }
 }
 exports.default = AppDialogFlow;
+const app = actions_on_google_1.dialogflow({ debug: true });
+const expressApp = express().use(bodyParser.json());
+expressApp.post('', app);
 //# sourceMappingURL=app-dialogflow.js.map

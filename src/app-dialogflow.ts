@@ -1,12 +1,12 @@
 import * as express from "express";
 import * as bodyParser from "body-parser";
 import { ProductIntents } from "./dialogflow/intents/products";
-import { dialogflow, Dialogflow } from "../node_modules/actions-on-google";
+import { dialogflow } from "../node_modules/actions-on-google";
 
 export default class AppDialogFlow {
 
     public expressApp: express.Application;
-    public app: Dialogflow;
+    public app;
     public productIntents: ProductIntents = new ProductIntents();
 
     constructor() {
@@ -15,7 +15,13 @@ export default class AppDialogFlow {
         this.expressApp = express();
         this.config();
         this.expressApp.post('', this.app);
-        this.productIntents.intents(this.app); 
+
+        // this.productIntents.intents(this.app);
+        
+        this.app.intent('Default Welcome Intent', conv => {
+            console.log('INTENT: Default Welcome Intent');
+            conv.ask('Hola');
+        });
     }
 
     private config(): void {
@@ -28,3 +34,7 @@ export default class AppDialogFlow {
     }
 }
 
+
+const app = dialogflow({ debug: true });
+const expressApp = express().use(bodyParser.json());
+expressApp.post('', app);
