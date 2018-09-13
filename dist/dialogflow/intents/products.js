@@ -6,6 +6,7 @@ class ProductIntents {
         this.productsService = new products_service_1.ProductService();
     }
     intents(app) {
+        console.log('Registering Prodcust Intents');
         app.intent('Default Welcome Intent', conv => {
             conv.ask('Hola');
         });

@@ -11,6 +11,8 @@ export class ProductIntents {
     }
 
     public intents(app): void {
+        console.log('Registering Prodcust Intents');
+        
         app.intent('Default Welcome Intent', conv => {
             conv.ask('Hola');
         });
