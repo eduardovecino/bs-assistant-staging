@@ -8,8 +8,8 @@ class AppDialogFlow {
     constructor() {
         this.productIntents = new products_1.ProductIntents();
         console.log('AppDialogFlow constructor');
-        this.app = actions_on_google_1.dialogflow({ debug: true });
         this.expressApp = express();
+        this.app = actions_on_google_1.dialogflow({ debug: true });
         this.config();
         this.expressApp.post('', this.app);
         // this.productIntents.intents(this.app);
@@ -26,8 +26,5 @@ class AppDialogFlow {
         console.log('initialize');
     }
 }
-exports.default = AppDialogFlow;
-const app = actions_on_google_1.dialogflow({ debug: true });
-const expressApp = express().use(bodyParser.json());
-expressApp.post('', app);
+exports.default = new AppDialogFlow().expressApp;
 //# sourceMappingURL=app-dialogflow.js.map

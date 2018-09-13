@@ -3,7 +3,7 @@ import * as bodyParser from "body-parser";
 import { ProductIntents } from "./dialogflow/intents/products";
 import { dialogflow } from "../node_modules/actions-on-google";
 
-export default class AppDialogFlow {
+class AppDialogFlow {
 
     public expressApp: express.Application;
     public app;
@@ -11,8 +11,8 @@ export default class AppDialogFlow {
 
     constructor() {
         console.log('AppDialogFlow constructor');
-        this.app = dialogflow({ debug: true });
         this.expressApp = express();
+        this.app = dialogflow({ debug: true });
         this.config();
         this.expressApp.post('', this.app);
 
@@ -34,7 +34,4 @@ export default class AppDialogFlow {
     }
 }
 
-
-const app = dialogflow({ debug: true });
-const expressApp = express().use(bodyParser.json());
-expressApp.post('', app);
+export default new AppDialogFlow().expressApp;
