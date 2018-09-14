@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { ProductService } from "../../services/products.service";
 import { Permission, Suggestions, SignIn } from "../../../node_modules/actions-on-google";
-// import { SUGGESTIONS } from "../../../constants/suggestions";
+import { SUGGESTIONS } from "../../../constants/suggestions";
 
 export class ProductIntents {
 
@@ -12,24 +12,24 @@ export class ProductIntents {
     }
 
     public intents(app): void {
-        // console.log('Registering Products Intents');
+        console.log('Registering Products Intents');
 
-        // var logged = '0';
+        var logged = '0';
 
-        // function suggestions(conv) {
-        //     if (logged === '1') {
-        //         conv.ask(new Suggestions(SUGGESTIONS.LOGGED_SUGGESTIONS));
-        //     } else {
-        //         conv.ask(new Suggestions(SUGGESTIONS.NOT_LOGGED_SUGGESTIONS));
-        //     }
-        // }
+        function suggestions(conv) {
+            if (logged === '1') {
+                conv.ask(new Suggestions(SUGGESTIONS.LOGGED_SUGGESTIONS));
+            } else {
+                conv.ask(new Suggestions(SUGGESTIONS.NOT_LOGGED_SUGGESTIONS));
+            }
+        }
 
         app.intent('Default Welcome Intent', conv => {
             conv.ask(`Bienvenido a Banco Sabadell`); 
-            // suggestions(conv);       
+            suggestions(conv);       
         });
 
-        /*app.intent('Default Welcome Intent', conv => {
+        app.intent('Default Welcome Intent', conv => {
             conv.ask(new Permission({
                 context: 'Para dirigirme a usted por su nombre y conocer su ubicación,',
                 permissions: ['NAME', 'DEVICE_PRECISE_LOCATION', 'DEVICE_COARSE_LOCATION'],
@@ -80,6 +80,5 @@ export class ProductIntents {
             const data = this.productsService.getProducts();
             conv.ask('El saldo  de la cuenta es de ' + data.num);
         });
-    }*/
-}
+    }
 }
