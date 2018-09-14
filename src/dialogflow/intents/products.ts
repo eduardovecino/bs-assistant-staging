@@ -13,9 +13,16 @@ export class ProductIntents {
     public intents(app): void {
         console.log('Registering Products Intents');
 
+        // app.intent('Default Welcome Intent', conv => {
+        //     console.log('INTENT: Default Welcome Intent');
+        //     conv.ask('Hola');
+        // });
+
         app.intent('Default Welcome Intent', conv => {
-            console.log('INTENT: Default Welcome Intent');
-            conv.ask('Hola');
+            conv.ask(new Permission({
+                context: 'Para dirigirme a usted por su nombre y conocer su ubicación,',
+                permissions: ['NAME', 'DEVICE_PRECISE_LOCATION', 'DEVICE_COARSE_LOCATION'],
+            }));
         });
 
         app.intent('Saldo cuenta', (conv, { tipo_cuenta }) => {
