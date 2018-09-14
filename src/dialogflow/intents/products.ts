@@ -16,13 +16,13 @@ export class ProductIntents {
 
         var logged = '0';
 
-        function suggestions(conv) {
-            if (logged === '1') {
-                conv.ask(new Suggestions(SUGGESTIONS.LOGGED_SUGGESTIONS));
-            } else {
-                conv.ask(new Suggestions(SUGGESTIONS.NOT_LOGGED_SUGGESTIONS));
-            }
-        }
+        // function suggestions(conv) {
+        //     if (logged === '1') {
+        //         conv.ask(new Suggestions(SUGGESTIONS.LOGGED_SUGGESTIONS));
+        //     } else {
+        //         conv.ask(new Suggestions(SUGGESTIONS.NOT_LOGGED_SUGGESTIONS));
+        //     }
+        // }
 
         app.intent('Default Welcome Intent', conv => {
             conv.ask(`Bienvenido a Banco Sabadell`); 
@@ -67,11 +67,11 @@ export class ProductIntents {
             if (signin.status === 'OK') {
                 const access = conv.user.access.token;  //possibly do something with access token
                 conv.ask(`¡Genial, gracias por iniciar sesión! ${access}`);
-                suggestions(conv);
+                // suggestions(conv);
             } else {
                 //${signin.status}
                 conv.ask(`No podré guardar tus datos, pero ¿qué quieres hacer a continuación?`);
-                suggestions(conv);
+                // suggestions(conv);
             }
         });
 
