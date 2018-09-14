@@ -3,11 +3,11 @@ import { SUGGESTIONS } from "../../constants/suggestions";
 
 export class BaseIntents {
 
-    public logged;
+    // public logged;
 
-    constructor() {
-        this.logged = '0';
-    }
+    // constructor() {
+    //     this.logged = '0';
+    // }
 
     // public suggestions(conv) {
     //     if (this.logged === '1') {
