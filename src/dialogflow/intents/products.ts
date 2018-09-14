@@ -36,7 +36,7 @@ export class ProductIntents {
             }));
         });
 
-        Create a Dialogflow intent with the `actions_intent_PERMISSION` event
+        //Create a Dialogflow intent with the `actions_intent_PERMISSION` event
         app.intent('Get Permission', (conv, params, confirmationGranted) => {
             console.log("get permission 1");
 
