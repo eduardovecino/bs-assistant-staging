@@ -9,7 +9,7 @@ export class BaseIntents {
         this.logged = '0';
     }
 
-    suggestions(conv) {
+    public suggestions(conv) {
         if (this.logged === '1') {
             conv.ask(new Suggestions(SUGGESTIONS.LOGGED_SUGGESTIONS));
         } else {
