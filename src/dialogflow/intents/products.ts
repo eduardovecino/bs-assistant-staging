@@ -2,13 +2,12 @@ import { Permission, SignIn } from "actions-on-google";
 import { ProductService } from "../../services/products.service";
 import { BaseIntents } from "./base-intent";
 
-export class ProductIntents /*extends BaseIntents*/ {
+export class ProductIntents extends BaseIntents {
 
-    private productsService: ProductService;
+    private productsService: ProductService = new ProductService();
 
     constructor() {
-        // super();
-        this.productsService = new ProductService();
+        super();
     }
 
     public intents(app): void {
