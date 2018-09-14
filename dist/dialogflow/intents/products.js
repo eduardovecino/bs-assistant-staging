@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const products_service_1 = require("../../services/products.service");
-// import { BaseIntents } from "./base-intents";
-class ProductIntents {
+const base_intents_1 = require("./base-intents");
+class ProductIntents extends base_intents_1.BaseIntents {
     constructor() {
-        // super();
+        super();
         this.productsService = new products_service_1.ProductService();
     }
     intents(app) {
