@@ -1,8 +1,8 @@
 import { Permission, SignIn } from "actions-on-google";
 import { ProductService } from "../../services/products.service";
-import { BaseIntent } from "./base-intent";
+import { polla } from "./base-intent";
 
-export class ProductIntents extends BaseIntent {
+export class ProductIntents extends polla {
 
     private productsService: ProductService = new ProductService();
 
