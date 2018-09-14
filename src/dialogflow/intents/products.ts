@@ -34,8 +34,11 @@ export class ProductIntents {
         // Create a Dialogflow intent with the `actions_intent_PERMISSION` event
         app.intent('Get Permission', (conv, params, confirmationGranted) => {
             const { name } = conv.user;
+            console.log("get permission 1");
             if (confirmationGranted) {
+                console.log("get permission 2");
                 if (name) {
+                    console.log("get permission 3");
                     conv.ask(`Bienvenido a Banco Sabadell, ${name.display}`);
                     // suggestions(conv);
                 }
