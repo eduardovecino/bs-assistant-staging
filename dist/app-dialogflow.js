@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express = require("express");
 const bodyParser = require("body-parser");
 const products_1 = require("./dialogflow/intents/products");
-const actions_on_google_1 = require("../node_modules/actions-on-google");
+const actions_on_google_1 = require("actions-on-google");
 class AppDialogFlow {
     constructor() {
         this.productIntents = new products_1.ProductIntents();

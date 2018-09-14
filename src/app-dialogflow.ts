@@ -1,7 +1,7 @@
 import * as express from "express";
 import * as bodyParser from "body-parser";
 import { ProductIntents } from "./dialogflow/intents/products";
-import { dialogflow } from "../node_modules/actions-on-google";
+import { dialogflow } from "actions-on-google";
 
 class AppDialogFlow {
 
