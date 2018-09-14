@@ -1,6 +1,11 @@
 export const SUGGESTIONS = {
     NOT_LOGGED_SUGGESTIONS: [
-        'Iniciar Sesión'],
+        'Iniciar Sesión',
+        'Oficinas Cercanas',
+        'Abrir App'],
     LOGGED_SUGGESTIONS: [
-        'Saldo cuenta']
+        'Cuentas',
+        'Tarjetas',
+        'Oficinas Cercanas',
+        'Abrir App']
 }

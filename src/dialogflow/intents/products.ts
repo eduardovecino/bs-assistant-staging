@@ -16,31 +16,45 @@ export class ProductIntents {
 
         var logged = '0';
 
+        function suggestions(conv) {
+            if (logged === '1') {
+                conv.ask(new Suggestions(SUGGESTIONS.LOGGED_SUGGESTIONS));
+            } else {
+                conv.ask(new Suggestions(SUGGESTIONS.NOT_LOGGED_SUGGESTIONS));
+            }
+        }
 
         app.intent('Default Welcome Intent', conv => {
-            conv.ask(new Permission({
-                context: 'Para dirigirme a usted por su nombre y conocer su ubicación,',
-                permissions: ['NAME', 'DEVICE_PRECISE_LOCATION', 'DEVICE_COARSE_LOCATION'],
-            }));
+            conv.ask(`Bienvenido a Banco Sabadell`); 
+            // suggestions(conv);       
         });
 
-        //Create a Dialogflow intent with the `actions_intent_PERMISSION` event
-        app.intent('Get Permission', (conv, params, confirmationGranted) => {
-            // console.log("get permission 1");
-            conv.ask(`Bienvenido a Banco Sabadell`);
-            // console.log("get permission 1");
-            const { name } = conv.user;
-            if (confirmationGranted) {
-                // console.log("get permission 2");
-                if (name) {
-                    // console.log("get permission 3");
-                    conv.ask(`Bienvenido a Banco Sabadell, ${name.display}`);
-                    conv.ask(new Suggestions('Saldo cuenta', 'Iniciar Sesión'));
-                }
-            } else {
-                conv.ask(`I can't read your mind right now! My mystical powers have failed!`);
-            }
-        });
+        // app.intent('Default Welcome Intent', conv => {
+        //     conv.ask(new Permission({
+        //         context: 'Para dirigirme a usted por su nombre y conocer su ubicación,',
+        //         permissions: ['NAME', 'DEVICE_PRECISE_LOCATION', 'DEVICE_COARSE_LOCATION'],
+        //     }));
+        // });
+
+        // Create a Dialogflow intent with the `actions_intent_PERMISSION` event
+        // app.intent('Get Permission', (conv, params, confirmationGranted) => {
+        //     console.log("get permission 1");
+
+        //     conv.ask(`Bienvenido a Banco Sabadell`);
+
+        //     console.log("get permission 1");
+        //     const { name } = conv.user;
+        //     if (confirmationGranted) {
+        //         console.log("get permission 2");
+        //         if (name) {
+        //             console.log("get permission 3");
+        //             conv.ask(`Bienvenido a Banco Sabadell, ${name.display}`);
+        //             // suggestions(conv);
+        //         }
+        //     } else {
+        //         conv.ask(`I can't read your mind right now! My mystical powers have failed!`);
+        //     }
+        // });
 
         //Iniciar Sesión
         app.intent('Iniciar Sesion', (conv) => {
@@ -53,11 +67,11 @@ export class ProductIntents {
             if (signin.status === 'OK') {
                 const access = conv.user.access.token;  //possibly do something with access token
                 conv.ask(`¡Genial, gracias por iniciar sesión! ${access}`);
-                // suggestions(conv);
+                suggestions(conv);
             } else {
-                // ${signin.status}
+                //${signin.status}
                 conv.ask(`No podré guardar tus datos, pero ¿qué quieres hacer a continuación?`);
-                // suggestions(conv);
+                suggestions(conv);
             }
         });
 
