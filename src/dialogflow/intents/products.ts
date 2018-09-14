@@ -38,16 +38,14 @@ export class ProductIntents {
 
         //Create a Dialogflow intent with the `actions_intent_PERMISSION` event
         app.intent('Get Permission', (conv, params, confirmationGranted) => {
-            console.log("get permission 1");
-
+            // console.log("get permission 1");
             conv.ask(`Bienvenido a Banco Sabadell`);
-
-            console.log("get permission 1");
+            // console.log("get permission 1");
             const { name } = conv.user;
             if (confirmationGranted) {
-                console.log("get permission 2");
+                // console.log("get permission 2");
                 if (name) {
-                    console.log("get permission 3");
+                    // console.log("get permission 3");
                     conv.ask(`Bienvenido a Banco Sabadell, ${name.display}`);
                     // suggestions(conv);
                 }
@@ -69,7 +67,7 @@ export class ProductIntents {
                 conv.ask(`¡Genial, gracias por iniciar sesión! ${access}`);
                 suggestions(conv);
             } else {
-                //${signin.status}
+                ${signin.status}
                 conv.ask(`No podré guardar tus datos, pero ¿qué quieres hacer a continuación?`);
                 suggestions(conv);
             }
