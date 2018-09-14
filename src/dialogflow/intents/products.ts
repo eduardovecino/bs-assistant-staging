@@ -7,7 +7,7 @@ export class ProductIntents extends BaseIntents {
     private productsService: ProductService;
 
     constructor() {
-        super();
+        //super();
         this.productsService = new ProductService();
     }
 

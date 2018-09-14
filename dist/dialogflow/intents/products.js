@@ -5,7 +5,7 @@ const products_service_1 = require("../../services/products.service");
 const base_intent_1 = require("./base-intent");
 class ProductIntents extends base_intent_1.BaseIntents {
     constructor() {
-        super();
+        //super();
         this.productsService = new products_service_1.ProductService();
     }
     intents(app) {
