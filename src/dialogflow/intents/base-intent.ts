@@ -1,7 +1,7 @@
 // import { Suggestions } from "actions-on-google";
 // import { SUGGESTIONS } from "../../constants/suggestions";
 
-export class BaseIntents {
+export class BaseIntent {
 
     // public logged;
 
