@@ -16,18 +16,6 @@ export class ProductIntents {
 
         var logged = '0';
 
-        // function suggestions(conv) {
-        //     if (logged === '1') {
-        //         conv.ask(new Suggestions(SUGGESTIONS.LOGGED_SUGGESTIONS));
-        //     } else {
-        //         conv.ask(new Suggestions(SUGGESTIONS.NOT_LOGGED_SUGGESTIONS));
-        //     }
-        // }
-
-        // app.intent('Default Welcome Intent', conv => {
-        //     conv.ask(`Bienvenido a Banco Sabadell`); 
-        //     suggestions(conv);       
-        // });
 
         app.intent('Default Welcome Intent', conv => {
             conv.ask(new Permission({
