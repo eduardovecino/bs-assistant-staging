@@ -67,7 +67,7 @@ export class ProductIntents {
                 conv.ask(`¡Genial, gracias por iniciar sesión! ${access}`);
                 suggestions(conv);
             } else {
-                ${signin.status}
+                // ${signin.status}
                 conv.ask(`No podré guardar tus datos, pero ¿qué quieres hacer a continuación?`);
                 suggestions(conv);
             }
