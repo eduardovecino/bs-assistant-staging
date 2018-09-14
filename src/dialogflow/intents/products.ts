@@ -24,10 +24,10 @@ export class ProductIntents {
             }
         }
 
-        app.intent('Default Welcome Intent', conv => {
-            conv.ask(`Bienvenido a Banco Sabadell`); 
-            suggestions(conv);       
-        });
+        // app.intent('Default Welcome Intent', conv => {
+        //     conv.ask(`Bienvenido a Banco Sabadell`); 
+        //     suggestions(conv);       
+        // });
 
         app.intent('Default Welcome Intent', conv => {
             conv.ask(new Permission({
