@@ -2,9 +2,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const actions_on_google_1 = require("actions-on-google");
 const products_service_1 = require("../../services/products.service");
-class ProductIntents /*extends BaseIntents*/ {
+const base_intent_1 = require("./base-intent");
+class ProductIntents extends base_intent_1.BaseIntents {
     constructor() {
-        //super();
+        super();
         this.productsService = new products_service_1.ProductService();
     }
     intents(app) {
