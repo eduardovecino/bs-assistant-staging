@@ -25,6 +25,7 @@ export class ProductIntents {
         }
 
         app.intent('Default Welcome Intent', conv => {
+            console.log("welcome intent");
             conv.ask(new Permission({
                 context: 'Para dirigirme a usted por su nombre y conocer su ubicación,',
                 permissions: ['NAME', 'DEVICE_PRECISE_LOCATION', 'DEVICE_COARSE_LOCATION'],
@@ -33,6 +34,8 @@ export class ProductIntents {
 
         // Create a Dialogflow intent with the `actions_intent_PERMISSION` event
         app.intent('Get Permission', (conv, params, confirmationGranted) => {
+            console.log("get permission 1");
+
             conv.ask(`Bienvenido a Banco Sabadell`);
 
             // console.log("get permission 1");
