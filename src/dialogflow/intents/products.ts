@@ -37,7 +37,7 @@ export class ProductIntents {
             if (confirmationGranted) {
                 if (name) {
                     conv.ask(`Bienvenido a Banco Sabadell, ${name.display}`);
-                    suggestions(conv);
+                    // suggestions(conv);
                 }
             } else {
                 conv.ask(`I can't read your mind right now! My mystical powers have failed!`);
