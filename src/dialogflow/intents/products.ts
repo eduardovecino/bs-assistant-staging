@@ -12,7 +12,7 @@ export class ProductIntents extends BaseIntent {
 
     public intents(app): void {
         
-        console.log('Registering Products Intents');
+        console.log('Registering Products Intents Hola Hola Hola');
 
         // app.intent('Default Welcome Intent', conv => {
         //     conv.ask(`Bienvenido a Banco Sabadell`); 
