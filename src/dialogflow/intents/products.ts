@@ -24,6 +24,7 @@ export class ProductIntents extends polla {
                 permissions: ['NAME', 'DEVICE_PRECISE_LOCATION', 'DEVICE_COARSE_LOCATION'],
             }));
         });
+        
 
         // Create a Dialogflow intent with the `actions_intent_PERMISSION` event
         /*app.intent('Get Permission', (conv, params, confirmationGranted) => {
