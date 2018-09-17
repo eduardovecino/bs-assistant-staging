@@ -1,8 +1,8 @@
 import { Permission, SignIn } from "actions-on-google";
 import { ProductService } from "../../services/products.service";
-import { polla } from "./base-intent";
+import { BaseIntent } from "./base-intent";
 
-export class ProductIntents extends polla {
+export class ProductIntents extends BaseIntent {
 
     private productsService: ProductService = new ProductService();
 
@@ -24,7 +24,6 @@ export class ProductIntents extends polla {
                 permissions: ['NAME', 'DEVICE_PRECISE_LOCATION', 'DEVICE_COARSE_LOCATION'],
             }));
         });
-        
 
         // Create a Dialogflow intent with the `actions_intent_PERMISSION` event
         /*app.intent('Get Permission', (conv, params, confirmationGranted) => {
